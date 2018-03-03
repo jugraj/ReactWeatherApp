@@ -1,0 +1,23 @@
+{
+  "name": "hello",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "create-react-app-sass": "^1.1.0",
+    "react-scripts": "1.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^3.3.7",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-md": "^1.2.11"
+  },
+  "scripts": {
+    "start": "react-scripts-with-sass start",
+    "build": "react-scripts-with-sass build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
