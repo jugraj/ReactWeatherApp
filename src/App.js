@@ -22,7 +22,7 @@ class App extends Component {
   }
 
 weatherLookup(city){
-  axios.get(`http://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${KEY_ID}`)
+  axios.get(`https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${city}&appid=${KEY_ID}`)
   .then((response)=> {
     console.log(response.data.city)
     this.setState({
