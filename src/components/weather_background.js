@@ -9,7 +9,8 @@ class WeatherBackground extends Component{
 		super(props);
 		this.state = {
 			imgURL:'',
-			city:this.props.city
+			city:this.props.city,
+			credits:''
 		};
 	}
 	componentDidMount(){
@@ -37,7 +38,8 @@ class WeatherBackground extends Component{
           	console.log('randomNum ',randomNum)
          	this.setState({
          		city:city,
-         		imgURL:response.data.results[randomNum].urls.regular
+         		imgURL:response.data.results[randomNum].urls.regular,
+         		credits:response.data.results[randomNum].user
          	});
         })
      	.catch((error)=> {
@@ -49,11 +51,13 @@ class WeatherBackground extends Component{
 		if(this.props.country===""){
 			return <div className='weather-background'>Loading Component</div>
 		}
-
+		const {credits} = this.state;
+		const usernameLink = `https://unsplash.com/@${credits.username}?utm_source=WeatherApp&utm_medium=referral`;
 		return (
+			
 			<div className='weather-background'>
-
 				<img src={this.state.imgURL} />
+				<div className='unsplash-credits'>Photo by <a target="_blank" href={usernameLink}>{this.state.credits.name}</a> on <a target="_blank" href="https://unsplash.com/?utm_source=WeatherApp&utm_medium=referral">Unsplash</a></div>
 			</div>
 		);
 	}

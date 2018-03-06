@@ -15,7 +15,8 @@ const WeatherList=(props)=>{
 				<ul>
 				{props.weather.map((w,i,aa)=>{
 					// console.log({w})
-					const time = w.dt_txt;//tConvert(w.dt_txt.split(' ')[1]);
+					const time = tConvert(w.dt_txt.split(' ')[1]);
+					const date = tConvert(w.dt_txt.split(' ')[0]);
 					const icon = `http://openweathermap.org/img/w/${w.weather[0].icon}.png`;
 
 					// console.log(aa);
@@ -47,7 +48,8 @@ const WeatherList=(props)=>{
 								</div>
 								<div className='min-temp'>{w.main.temp_min}</div>
 								<div className='max-temp'>{w.main.temp_max}</div>
-								<div>{time}</div>
+								<div>{date}</div>
+								<div>at {time}</div>
 							
 							</li>
 						)
