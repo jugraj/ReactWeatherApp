@@ -1,5 +1,5 @@
 import React from 'react';
-import { Panel } from 'react-bootstrap';
+// import { Panel } from 'react-bootstrap';
 
 const WeatherList=(props)=>{
 
@@ -42,7 +42,7 @@ const WeatherList=(props)=>{
 							<li className='weather-list' key={i}>
 									<div className='main-temp'>{w.main.temp_min}</div>
 								<div>
-									<img src={icon}/>
+									<img alt={w.weather[0].description} src={icon}/>
 									<div>{w.weather[0].description}</div>
 								</div>
 								<div className='min-temp'>{w.main.temp_min}</div>

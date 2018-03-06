@@ -48,6 +48,12 @@ body {
 	font-size: 20px;
 	top:50px;
 	position: relative;
+	overflow: auto;
+	height: 75vh;
+	& ul{
+			width: 100%;
+			padding: 0;
+		}
 	
 }
 .weather-header{
@@ -64,6 +70,8 @@ body {
 span.city-name{
 	font-size: 54px;
 	font-weight: bold;
+	/*text-decoration: underline;*/
+	text-transform: uppercase;
 
 }
 
@@ -76,8 +84,9 @@ span.city-name{
 	padding: 20px;
 	display: inline-block;
 	width: 150px;
-	max-width: 200px;
+	max-width: 250px;
 	font-size: 14px;
+	
 }
 .weather-list:hover{
 	background-color: #ddd;
@@ -89,12 +98,19 @@ span.city-name{
 	left:0;
 	width:100%;
 	height:100vh;
+	position: fixed;
 	& img{
 		/*display:block;*/
 	    width:100%; 
 	    height:100%;
 	    object-fit: cover;
 	}
+}
+
+@media screen and (max-width: 400px) {
+    .weather-list{
+        width:100%;
+    }
 }
 
 
